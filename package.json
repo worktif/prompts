@@ -1,0 +1,19 @@
+{
+  "name": "@worktif/prompts",
+  "version": "0.1.0",
+  "description": "Repository for basic and extensive prompt engineering including prompts, data, descriptions, specifications, and more.",
+  "main": "dist/index.js",
+  "files": [
+    "engineering/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.5.3"
+  },
+  "private": true
+}
