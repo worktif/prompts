@@ -9,11 +9,19 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "tsc"
+    "build": "yarn typecheck && esbuild src/index.ts src/skills/crawl.ts --bundle --platform=node --target=node20 --format=esm --packages=external --tree-shaking=true --minify --sourcemap=external --legal-comments=none --outdir=dist",
+    "build:crawl": "esbuild src/skills/crawl.ts --bundle --platform=node --target=node20 --format=esm --packages=external --tree-shaking=true --minify --sourcemap=external --legal-comments=none --outfile=dist/skills/crawl.js --banner:js=\"#!/usr/bin/env node\"",
+    "typecheck": "tsc --noEmit",
+    "crawl": "node dist/skills/crawl.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "playwright": "^1.55.0"
+  },
   "devDependencies": {
+    "@types/node": "^22.10.2",
+    "esbuild": "^0.25.9",
     "typescript": "^5.5.3"
   },
-  "private": true
+  "private": true,
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
