@@ -1,0 +1,73 @@
+# Project Engineering Contract
+
+This file stores verified facts and rules for the specific repository. Before using it, replace sections containing angle brackets with the project's actual information; do not add unverified assumptions.
+
+## Project identity and scope
+
+- Name: `<project name>`
+- Purpose: `<one precise sentence>`
+- Runtime and language versions: `<verified versions>`
+- Repository layout: `<relevant directories and ownership>`
+- In scope for normal changes: `<scope>`
+- Out of scope: `<explicit exclusions>`
+
+## Architecture and ownership
+
+- Main entry points: `<verified entry points>`
+- Module/service boundaries: `<verified boundaries>`
+- Source of truth for configuration: `<files or external system>`
+- Owner of persistent state: `<module/service/store>`
+- Lifecycle and shutdown rules: `<verified behavior>`
+- Public contracts and compatibility policy: `<API/versioning rules>`
+- Forbidden bypasses: `<abstractions, builders, pipelines, or paths not to bypass>`
+
+## Development commands
+
+Use only commands confirmed by the repository. Keep independent test contracts separate.
+
+```text
+Install: <command>
+Build: <command>
+Type-check: <command>
+Lint: <command>
+Format check: <command>
+Unit tests: <command>
+Integration tests: <command>
+E2E tests: <command>
+Package/release check: <command>
+```
+
+## Coding and API rules
+
+- Strictness and compiler settings: `<verified settings>`
+- Naming and module conventions: `<verified conventions>`
+- Public API documentation: JSDoc policy, parameter/return/error documentation.
+- Error model: `<typed errors, result objects, exceptions, status mapping>`
+- Logging and sensitive-data rules: `<verified policy>`
+- Dependency policy: `<allowed versions, update process>`
+- Backward compatibility: `<required guarantees>`
+
+## Test and quality contract
+
+Every behavior change requires an explicit test impact assessment. Cover normal, invalid, boundary, failure, retry, timeout, concurrency and idempotency behavior where applicable. Use integration or E2E tests when the risk crosses a process, storage, network, browser or deployment boundary. Do not claim 100% correctness from line coverage alone.
+
+Required checks for this repository: `<verified checks>`
+Coverage or mutation thresholds, if enforced: `<verified thresholds>`
+
+## Change safety
+
+- Preserve unrelated worktree changes.
+- Do not reset, delete, overwrite or migrate data without explicit scope and a recoverable plan.
+- Do not change package scripts, public names or configuration semantics unless the task requires it.
+- Separate local verification from deployed verification.
+- Record unresolved risks instead of silently assuming them away.
+
+## Delivery acceptance
+
+Before reporting completion, provide:
+
+1. files changed and why;
+2. implementation summary;
+3. checks actually run and their results;
+4. acceptance criteria status;
+5. remaining risks or unverified boundaries.

@@ -1,6 +1,7 @@
 {
   "name": "@worktif/prompts",
   "version": "0.1.0",
+  "type": "module",
   "description": "Repository for basic and extensive prompt engineering including prompts, data, descriptions, specifications, and more.",
   "main": "dist/index.js",
   "files": [
@@ -9,10 +10,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "yarn typecheck && esbuild src/index.ts src/skills/crawl.ts --bundle --platform=node --target=node20 --format=esm --packages=external --tree-shaking=true --minify --sourcemap=external --legal-comments=none --outdir=dist",
-    "build:crawl": "esbuild src/skills/crawl.ts --bundle --platform=node --target=node20 --format=esm --packages=external --tree-shaking=true --minify --sourcemap=external --legal-comments=none --outfile=dist/skills/crawl.js --banner:js=\"#!/usr/bin/env node\"",
-    "typecheck": "tsc --noEmit",
-    "crawl": "node dist/skills/crawl.js"
+    "build": "tsc"
   },
   "dependencies": {
     "playwright": "^1.55.0"
