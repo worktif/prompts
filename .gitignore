@@ -1,5 +1,6 @@
 /tmp
 /out-tsc
+/modules/*/dist/
 
 /node_modules
 npm-debug.log*
@@ -713,4 +714,3 @@ cython_debug/
 
 # Skills generator
 .skills/drafts
-

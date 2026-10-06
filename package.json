@@ -4,20 +4,27 @@
   "type": "module",
   "description": "Repository for basic and extensive prompt engineering including prompts, data, descriptions, specifications, and more.",
   "main": "dist/index.js",
+  "license": "Apache-2.0",
   "files": [
     "engineering/",
     "README.md",
     "LICENSE"
   ],
   "scripts": {
-    "build": "tsc"
+    "build": "yarn typecheck && esbuild modules/git-skills/src/module.ts --bundle --platform=node --format=esm --target=node20 --outfile=modules/git-skills/dist/module.js",
+    "typecheck": "tsc --noEmit",
+    "test:e2e": "yarn build && tsx --test test/e2e/git-skills-module.test.ts"
   },
   "dependencies": {
-    "playwright": "^1.55.0"
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "playwright": "^1.55.0",
+    "zod": "^4.6.5"
   },
   "devDependencies": {
+    "@stdiobus/mcpx": "^1.0.0",
     "@types/node": "^22.10.2",
     "esbuild": "^0.25.9",
+    "tsx": "^4.21.0",
     "typescript": "^5.5.3"
   },
   "private": true,
